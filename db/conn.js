@@ -1,10 +1,10 @@
+require("dotenv").config();
 const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-require("dotenv").config();
 
 const client = mongoose
-  .connect("mongodb://localhost:27017/health", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     // useNewUrlParser: true, 
     useUnifiedTopology: true,
